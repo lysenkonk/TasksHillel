@@ -1,0 +1,35 @@
+        .tabset
+        {
+            overflow: hidden;
+            margin: 0 0 -1px;
+            padding: 0;
+            list-style: none;
+            position: relative;
+        }
+        .tabset li
+        {
+            float: left;
+        }
+        .tabset a
+        {
+            color: #000;
+            text-decoration: none;
+            padding: 5px;
+            border: 1px solid #aaa;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+            display: block;
+        }
+        .tabset a.active
+        {
+            border-bottom: 1px solid #fff;
+        }
+        .tab-hold
+        {
+            border: 1px solid #aaa;
+            padding: 15px;
+        }
+        p
+        {
+            margin: 0;
+        }
