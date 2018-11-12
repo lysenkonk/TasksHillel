@@ -11,10 +11,10 @@ function showUsers(arrUsers)
         });      
     };
 
-function openAndSendRequest(typeRequest, url, page)
+function openAndSendGetRequest(url, page)
 {
     var request = new XMLHttpRequest();
-    request.open(typeRequest, url + page);
+    request.open("Get", url + page);
     request.onreadystatechange = function()
     {
         if(request.readyState == XMLHttpRequest.DONE)
@@ -24,6 +24,27 @@ function openAndSendRequest(typeRequest, url, page)
         }
     }
     request.send();
+}
+
+function openAndSendPostRequest(url, userForSend) {
+    var req = new XMLHttpRequest();
+    req.open("POST", url);
+    req.setRequestHeader('Content-type', 'application/json;charset=utf-8');
+    req.onreadystatechange = function () {
+        if (req.readyState != 4)
+        {
+            //$('#reqText').text(req.statusText);
+        }
+        if (req.readyState == XMLHttpRequest.DONE) {
+            
+            //$('#reqText').text(req.statusText);
+        }
+    }
+    //req.abort = function ()
+    //{
+    //    $('#reqText').text("Request has canceled");
+    //}
+    req.send(JSON.stringify({ "name": userForSend.name, "password": userForSend.password }));
 }
 
 function render(user)
@@ -43,7 +64,7 @@ function render(user)
 $(function()
 {
     // var req = new XMLHttpRequest();
-    // req.open("Get", "https://reqres.in/api/users", false);
+    // req.open("Get", "https://reqres.in/api/users");
     // req.onreadystatechange = function()
     // {
     //     if(req.readyState == XMLHttpRequest.DONE)
@@ -52,6 +73,12 @@ $(function()
     //     }
     // }
     // req.send();
+    let user = {};
+    $("#form").submit(function () {
+        user.name = $("#name").val();
+        user.password = $("#password").val();
+        openAndSendPostRequest("https://reqres.in/api/users", user);
+    });
 
     $('#pagination').twbsPagination(
         {
@@ -61,7 +88,7 @@ $(function()
             prev: 'Prev',
             onPageClick: function (event, page) 
             {
-                openAndSendRequest("Get", "https://reqres.in/api/users?page=", page);
+                openAndSendGetRequest("https://reqres.in/api/users?page=", page);
             }  
     }); 
 });
