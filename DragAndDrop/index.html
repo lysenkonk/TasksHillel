@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="UTF-8"/>
+		<title>DragAndDrops</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<script src="main.js"></script>
+
+	</body>
+
+</html> -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DragAndDrop/title>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script>
+    $( function() {
+        let count = 0;
+      $( "#draggable" ).draggable();
+      $( "#droppable" ).droppable({
+        drop: function( event, ui ) {
+            count++;
+          $( this )
+            .addClass( "ui-state-highlight" )
+            .find( "p" )
+              .html( "Dropped!" + count);
+        },
+        over: function( event, ui ) {
+            // $( this ).removeClass("ui-widget-header" );
+            $( this ).addClass( "red" );
+        },
+        out: 
+        function( event, ui ) {
+            $( this ).removeClass("red");
+        }
+      });
+    } );
+    </script>
+      <style>
+        .red {
+      background: red;
+      background-color: red;
+    }
+    #draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+    #droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+    </style>
+  </head>
+  <body>
+   
+  <div class="draggable" class="ui-widget-content">
+    <li id = "1" class = "ui-widget-content">Drag me to my target1</li>
+    <li id = "2" class = "ui-widget-content">Drag me to my target2</li>
+    <li id = "3" class = "ui-widget-content">Drag me to my target3</li>
+    <li id = "4" class = "ui-widget-content">Drag me to my target4</li>
+    <li id = "5" class = "ui-widget-content">Drag me to my target5</li>
+    <li id = "6" class = "ui-widget-content">Drag me to my target6</li>
+    <li id = "7" class = "ui-widget-content">Drag me to my target7</li>
+    <li id = "8" class = "ui-widget-content">Drag me to my target8</li>
+
+  </div>
+   
+  <ul id="droppable" class="ui-widget-header">
+    <p>Drop here</p>
+  </div>
+   
+   
+  </body>
+  </html>
