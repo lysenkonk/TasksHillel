@@ -1,0 +1,73 @@
+h1,
+h2,
+h3,
+span {
+  margin: 0;
+}
+h1 {
+  font-size: 16rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 1.4rem;
+}
+span {
+  font-size: 6rem;
+}
+body{
+  background-image: linear-gradient( #80e5ff,#4ddbff, #00ccff, #66ffff
+  , #b3ffff,#ccffff, #99ebff,#33d6ff, #b3f0ff, #4ddbff);
+}
+.container {
+  max-width: 500px;
+  height: 50vh;
+  border: 1px solid black;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 20% 80%;
+  text-align: center;
+  padding: 25px 5px;
+}
+.degrees {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  margin-left: 2rem;
+}
+.tabset
+{
+    overflow: hidden;
+    margin: 0 0 -1px;
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+.tabset li
+{
+    float: left;
+}
+.tabset a
+{
+    color: #000;
+    text-decoration: none;
+    padding: 5px;
+    border: 1px solid #aaa;
+    margin-right: 5px;
+    border-radius: 5px 5px 0 0;
+    display: block;
+}
+.tabset a.active
+{
+    border-bottom: 1px solid #fff;
+}
+*/*.tab-hold
+{
+    border: 1px solid #aaa;
+    padding: 15px;
+}*/
+p
+{
+    margin: 0;
+}

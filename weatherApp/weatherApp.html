@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tabs-holder">
+        <ul class="tabset">
+            <li><a class="active" href="#2day">2 day forecast</a></li>
+            <li><a href="#5day">5 day forecast</a></li>
+            <li><a href="#10day">10 day forecast</a></li>
+        </ul>   
+        <div class="tab-hold">
+            <div id="2day">
+                    <div class="container">
+                            <h2 id="city"></h2>
+                            <div id="middle">
+                              <img src="" alt="icon" id="icon">
+                              <div class="degrees">
+                                <h1 id="temp"></h1>
+                                <span>&#176;</span>
+                              </div>
+                              <h3 id="desc"></h3>
+                            </div>
+                          </div>         
+            </div>
+            <div id="5day">
+                <p>
+                </p>
+            </div>
+            <div id="10day">
+                <p>
+                </p>
+            </div>        
+        </div>
+    </div> 
+<!--     <div class="tabs-holder">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="2days-tab" data-toggle="tab" href="#2days" role="tab" aria-controls="2days" aria-selected="true">2 days forecast</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="5days-tab" data-toggle="tab" href="#5days" role="tab" aria-controls="5days" aria-selected="false">5 days forecast</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="10days-tab" data-toggle="tab" href="#10days" role="tab" aria-controls="10days" aria-selected="false">10 days forecast</a>
+            </li>
+    </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="2days" role="tabpanel" aria-labelledby="2days-tab"><div class="container">
+                    <h2 id="city"></h2>
+                    <div id="middle">
+                      <img src="" alt="icon" id="icon">
+                      <div class="degrees">
+                        <h1 id="temp"></h1>
+                        <span>&#176;</span>
+                      </div>
+                      <h3 id="desc"></h3>
+                    </div>
+                  </div>     
+            </div>
+            <div class="tab-pane fade" id="5days" role="tabpanel" aria-labelledby="5days-tab"></div>
+            <div class="tab-pane fade" id="10days" role="tabpanel" aria-labelledby="10days-tab"></div>
+          </div>
+        </div> -->
+    <script src="tabs.js"></script> 
+    <script src="getWeather.js"></script>
+
+</body>
+</html>
